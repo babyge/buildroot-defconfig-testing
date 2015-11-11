@@ -1,0 +1,39 @@
+language: ruby
+sudo: false
+addons:
+  apt:
+    packages:
+    - bc
+    - libc6:i386
+    - libstdc++6:i386
+    - zlib1g:i386
+    - gcc-multilib
+env:
+  matrix:
+   - DEFCONFIG_NAME=altera_socdk
+   - DEFCONFIG_NAME=altera_sockit
+script:
+- echo 'Clone Buildroot repository'
+- git clone git://git.busybox.net/buildroot
+- cd buildroot
+- git checkout eaa876ad31bc83d6c791ddefcad609a596f5b06e
+# Crude hack to account for the fact that XFS is used by Travis, and
+# consumes less blocks than ext2/3/4, and therefore defeats mke2img
+# calculation. Without this, the altera_*_defconfig fail to build.
+- sed -i 's/1300/2500/' package/mke2img/mke2img
+- echo 'Configure Buildroot'
+- make ${DEFCONFIG_NAME}_defconfig
+- while true ; do echo "Still building" ; sleep 60 ; done &
+- stupidpid=$!
+- echo 'Build buildroot'
+- make > >(tee build.log |grep '>>>') 2>&1
+- kill ${stupidpid}
+- echo 'Display end of log'
+- tail -1000 build.log
+- echo 'Upload log file'
+- scp -oStrictHostKeyChecking=no -i ${HOME}/.ssh/buildroot-kim build.log buildroot@autobuild.buildroot.org:~/defconfigs-build/${TRAVIS_BUILD_NUMBER}-${DEFCONFIG_NAME}-${TRAVIS_JOB_ID}.log
+before_install:
+- mkdir -p ${HOME}/.ssh/
+- openssl aes-256-cbc -K $encrypted_ff43b1ef5e6e_key -iv $encrypted_ff43b1ef5e6e_iv -in buildroot-kim-ssh-key -out ${HOME}/.ssh/buildroot-kim -d
+- md5sum ${HOME}/.ssh/buildroot-kim
+- chmod 600 ${HOME}/.ssh/buildroot-kim
