@@ -117,7 +117,7 @@ script:
 # calculation. Without this, the altera_*_defconfig fail to build.
 - sed -i 's/1300/2500/' package/mke2img/mke2img
 - echo 'Configure Buildroot'
-- make ${DEFCONFIG_NAME}_defconfig
+- make ${DEFCONFIG_NAME}
 - while true ; do echo "Still building" ; sleep 60 ; done &
 - stupidpid=$!
 - echo 'Build buildroot'
