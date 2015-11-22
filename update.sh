@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-# BUILDROOT_GIT=git://git.busybox.net/buildroot
-BUILDROOT_GIT=$HOME/projets/buildroot
+BUILDROOT_GIT=git://git.busybox.net/buildroot
 
 tmpdir=$(mktemp -d)
 git clone ${BUILDROOT_GIT}  ${tmpdir} || \
