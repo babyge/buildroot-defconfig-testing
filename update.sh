@@ -20,7 +20,7 @@ sed -i "s%^- git checkout.*%- git checkout ${commit}%" .travis.yml || \
 awk -v gitrepo=${tmpdir} '
 /^  matrix:/ {
   print;
-  system("for i in $(ls -1 " gitrepo "/configs); do echo \"   - DEFCONFIG_NAME=$i\" ; done");
+  system("for i in $(ls -1 " gitrepo "/configs | sort); do echo \"   - DEFCONFIG_NAME=$i\" ; done");
   inmatrix=1; }
 /^script:/ {
   inmatrix=0;
