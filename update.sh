@@ -14,8 +14,10 @@ commit=$(git --git-dir ${tmpdir}/.git show -s --format=%H) || \
 sed -i "s%^- git checkout.*%- git checkout ${commit}%" .travis.yml || \
     { rm -rf ${tmpdir}; exit 1; }
 
-# Re-generate the list of defconfigs
-gawk -i inplace -v gitrepo=${tmpdir} '
+# Re-generate the list of defconfigs. Unfortunately, awk doesn't do in
+# place modification, so we generate to a temporary file and then
+# rename.
+awk -v gitrepo=${tmpdir} '
 /^  matrix:/ {
   print;
   system("for i in $(ls -1 " gitrepo "/configs); do echo \"   - DEFCONFIG_NAME=$i\" ; done");
@@ -28,7 +30,10 @@ gawk -i inplace -v gitrepo=${tmpdir} '
     next;
   }
   print;
-}' .travis.yml ||
+}' .travis.yml > .travis.yml.tmp || \
+    { rm -rf ${tmpdir}; exit 1; }
+
+mv .travis.yml.tmp .travis.yml || \
     { rm -rf ${tmpdir}; exit 1; }
 
 # Commit
