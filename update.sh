@@ -15,7 +15,7 @@ sed -i "s%^- git checkout.*%- git checkout ${commit}%" .travis.yml || \
     { rm -rf ${tmpdir}; exit 1; }
 
 # Re-generate the list of defconfigs
-awk -i inplace -v gitrepo=${tmpdir} '
+gawk -i inplace -v gitrepo=${tmpdir} '
 /^  matrix:/ {
   print;
   system("for i in $(ls -1 " gitrepo "/configs); do echo \"   - DEFCONFIG_NAME=$i\" ; done");
