@@ -113,7 +113,7 @@ script:
 - echo 'Clone Buildroot repository'
 - git clone git://git.busybox.net/buildroot
 - cd buildroot
-- git checkout 8fc8e2242ca55c10b8e3db619e8f4e7afe7b5316
+- git checkout 1c7239e36f2dc76fa8d3c79a3135f648110b7579
 # Crude hack to account for the fact that XFS is used by Travis, and
 # consumes less blocks than ext2/3/4, and therefore defeats mke2img
 # calculation. Without this, the altera_*_defconfig fail to build.
