@@ -48,6 +48,7 @@ env:
    - DEFCONFIG_NAME=freescale_imx6qsabresd_defconfig
    - DEFCONFIG_NAME=freescale_imx6sololiteevk_defconfig
    - DEFCONFIG_NAME=freescale_imx6sxsabresd_defconfig
+   - DEFCONFIG_NAME=freescale_imx6ulevk_defconfig
    - DEFCONFIG_NAME=freescale_mpc8315erdb_defconfig
    - DEFCONFIG_NAME=freescale_p1010rdb_pa_defconfig
    - DEFCONFIG_NAME=freescale_p2020ds_defconfig
@@ -113,7 +114,7 @@ script:
 - echo 'Clone Buildroot repository'
 - git clone git://git.busybox.net/buildroot
 - cd buildroot
-- git checkout dbf45d9759c189422d182adc4efbfeae21558f9f
+- git checkout 1b0933f201952bd7a933659335c9226842f28b18
 # Crude hack to account for the fact that XFS is used by Travis, and
 # consumes less blocks than ext2/3/4, and therefore defeats mke2img
 # calculation. Without this, the altera_*_defconfig fail to build.
