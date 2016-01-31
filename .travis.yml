@@ -9,7 +9,7 @@ addons:
     - zlib1g:i386
     - gcc-multilib
 notifications:
-  irc: "chat.freenode.net#brtest"
+  irc: "chat.freenode.net#buildroot"
 env:
   matrix:
    - DEFCONFIG_NAME=acmesystems_aria_g25_128mb_defconfig
