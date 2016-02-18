@@ -14,6 +14,8 @@ env:
   matrix:
    - DEFCONFIG_NAME=acmesystems_aria_g25_128mb_defconfig
    - DEFCONFIG_NAME=acmesystems_aria_g25_256mb_defconfig
+   - DEFCONFIG_NAME=acmesystems_arietta_g25_128mb_defconfig
+   - DEFCONFIG_NAME=acmesystems_arietta_g25_256mb_defconfig
    - DEFCONFIG_NAME=altera_socdk_defconfig
    - DEFCONFIG_NAME=altera_sockit_defconfig
    - DEFCONFIG_NAME=armadeus_apf27_defconfig
@@ -114,7 +116,7 @@ script:
 - echo 'Clone Buildroot repository'
 - git clone git://git.busybox.net/buildroot
 - cd buildroot
-- git checkout d9e618159189823ed48ed5717e4a3ca780241be5
+- git checkout 6cd8cbc6fa7aad86a267fac28345ff7236b61233
 # Crude hack to account for the fact that XFS is used by Travis, and
 # consumes less blocks than ext2/3/4, and therefore defeats mke2img
 # calculation. Without this, the altera_*_defconfig fail to build.
