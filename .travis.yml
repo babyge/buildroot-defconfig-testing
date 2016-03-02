@@ -43,6 +43,8 @@ env:
    - DEFCONFIG_NAME=ci20_defconfig
    - DEFCONFIG_NAME=cubieboard2_defconfig
    - DEFCONFIG_NAME=cubieboard_defconfig
+   - DEFCONFIG_NAME=firefly_rk3288_defconfig
+   - DEFCONFIG_NAME=firefly_rk3288_demo_defconfig
    - DEFCONFIG_NAME=freescale_imx28evk_defconfig
    - DEFCONFIG_NAME=freescale_imx31_3stack_defconfig
    - DEFCONFIG_NAME=freescale_imx6dlsabreauto_defconfig
@@ -65,6 +67,7 @@ env:
    - DEFCONFIG_NAME=mx53loco_defconfig
    - DEFCONFIG_NAME=nitrogen6sx_defconfig
    - DEFCONFIG_NAME=nitrogen6x_defconfig
+   - DEFCONFIG_NAME=nitrogen7_defconfig
    - DEFCONFIG_NAME=olimex_a20_olinuxino_lime2_defconfig
    - DEFCONFIG_NAME=olimex_a20_olinuxino_lime_defconfig
    - DEFCONFIG_NAME=olimex_a20_olinuxino_lime_mali_defconfig
@@ -116,7 +119,7 @@ script:
 - echo 'Clone Buildroot repository'
 - git clone git://git.busybox.net/buildroot
 - cd buildroot
-- git checkout 4ac9738be9d854235f1a61fc29792e1d86ff103b
+- git checkout 7e8b876a337c08bf03010d43cdd798d47e0f9978
 # Crude hack to account for the fact that XFS is used by Travis, and
 # consumes less blocks than ext2/3/4, and therefore defeats mke2img
 # calculation. Without this, the altera_*_defconfig fail to build.
