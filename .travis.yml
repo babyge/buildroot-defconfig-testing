@@ -103,6 +103,7 @@ env:
    - DEFCONFIG_NAME=qemu_xtensa_lx60_nommu_defconfig
    - DEFCONFIG_NAME=qmx6_defconfig
    - DEFCONFIG_NAME=raspberrypi2_defconfig
+   - DEFCONFIG_NAME=raspberrypi3_defconfig
    - DEFCONFIG_NAME=raspberrypi_defconfig
    - DEFCONFIG_NAME=riotboard_defconfig
    - DEFCONFIG_NAME=s6lx9_microboard_defconfig
@@ -127,7 +128,7 @@ script:
 - echo 'Clone Buildroot repository'
 - git clone git://git.busybox.net/buildroot
 - cd buildroot
-- git checkout 6046c1c93a5c0d67ac7260cee671e75aa7a200cd
+- git checkout 6f48085ecff26123d088884ec50af290a95865f7
 # Crude hack to account for the fact that XFS is used by Travis, and
 # consumes less blocks than ext2/3/4, and therefore defeats mke2img
 # calculation. Without this, the altera_*_defconfig fail to build.
