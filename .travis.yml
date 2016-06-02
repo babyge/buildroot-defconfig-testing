@@ -56,6 +56,7 @@ env:
    - DEFCONFIG_NAME=freescale_imx6sololiteevk_defconfig
    - DEFCONFIG_NAME=freescale_imx6sxsabresd_defconfig
    - DEFCONFIG_NAME=freescale_imx6ulevk_defconfig
+   - DEFCONFIG_NAME=freescale_imx7dsabresd_defconfig
    - DEFCONFIG_NAME=freescale_mpc8315erdb_defconfig
    - DEFCONFIG_NAME=freescale_p1010rdb_pa_defconfig
    - DEFCONFIG_NAME=freescale_p2020ds_defconfig
@@ -108,6 +109,7 @@ env:
    - DEFCONFIG_NAME=raspberrypi3_defconfig
    - DEFCONFIG_NAME=raspberrypi_defconfig
    - DEFCONFIG_NAME=riotboard_defconfig
+   - DEFCONFIG_NAME=roseapplepi_defconfig
    - DEFCONFIG_NAME=s6lx9_microboard_defconfig
    - DEFCONFIG_NAME=sheevaplug_defconfig
    - DEFCONFIG_NAME=snps_aarch64_vdk_defconfig
@@ -130,7 +132,7 @@ script:
 - echo 'Clone Buildroot repository'
 - git clone git://git.busybox.net/buildroot
 - cd buildroot
-- git checkout aa6fd11feebffe16d0b0396e0e7ad421ec061272
+- git checkout 00bd9daf0e75f76c2d15196feb9c7f608668430e
 # Crude hack to account for the fact that XFS is used by Travis, and
 # consumes less blocks than ext2/3/4, and therefore defeats mke2img
 # calculation. Without this, the altera_*_defconfig fail to build.
