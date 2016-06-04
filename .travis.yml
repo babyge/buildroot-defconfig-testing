@@ -80,6 +80,8 @@ env:
    - DEFCONFIG_NAME=openblocks_a6_defconfig
    - DEFCONFIG_NAME=orangepipc_defconfig
    - DEFCONFIG_NAME=pandaboard_defconfig
+   - DEFCONFIG_NAME=pc_x86_64_bios_defconfig
+   - DEFCONFIG_NAME=pc_x86_64_efi_defconfig
    - DEFCONFIG_NAME=qemu_aarch64_virt_defconfig
    - DEFCONFIG_NAME=qemu_arm_versatile_defconfig
    - DEFCONFIG_NAME=qemu_arm_vexpress_defconfig
@@ -132,7 +134,7 @@ script:
 - echo 'Clone Buildroot repository'
 - git clone git://git.busybox.net/buildroot
 - cd buildroot
-- git checkout 00bd9daf0e75f76c2d15196feb9c7f608668430e
+- git checkout a898d5de17f4b32ee29ff47734ff5717c6b40f03
 # Crude hack to account for the fact that XFS is used by Travis, and
 # consumes less blocks than ext2/3/4, and therefore defeats mke2img
 # calculation. Without this, the altera_*_defconfig fail to build.
