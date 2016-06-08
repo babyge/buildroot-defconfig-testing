@@ -67,6 +67,8 @@ env:
    - DEFCONFIG_NAME=minnowboard_defconfig
    - DEFCONFIG_NAME=minnowboard_max_defconfig
    - DEFCONFIG_NAME=minnowboard_max-graphical_defconfig
+   - DEFCONFIG_NAME=mx25pdk_defconfig
+   - DEFCONFIG_NAME=mx51evk_defconfig
    - DEFCONFIG_NAME=mx53loco_defconfig
    - DEFCONFIG_NAME=nitrogen6sx_defconfig
    - DEFCONFIG_NAME=nitrogen6x_defconfig
@@ -134,7 +136,7 @@ script:
 - echo 'Clone Buildroot repository'
 - git clone git://git.busybox.net/buildroot
 - cd buildroot
-- git checkout 0b69faf716bcf901f59189219d64df56623fa23c
+- git checkout 34ba9eedd46e692d579573b8d360033bacb1841c
 # Crude hack to account for the fact that XFS is used by Travis, and
 # consumes less blocks than ext2/3/4, and therefore defeats mke2img
 # calculation. Without this, the altera_*_defconfig fail to build.
