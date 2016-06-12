@@ -30,12 +30,17 @@ env:
    - DEFCONFIG_NAME=at91sam9rlek_defconfig
    - DEFCONFIG_NAME=at91sam9x5ek_defconfig
    - DEFCONFIG_NAME=atmel_sama5d2_xplained_mmc_defconfig
+   - DEFCONFIG_NAME=atmel_sama5d2_xplained_mmc_dev_defconfig
    - DEFCONFIG_NAME=atmel_sama5d3xek_defconfig
    - DEFCONFIG_NAME=atmel_sama5d3_xplained_defconfig
+   - DEFCONFIG_NAME=atmel_sama5d3_xplained_dev_defconfig
    - DEFCONFIG_NAME=atmel_sama5d3_xplained_mmc_defconfig
+   - DEFCONFIG_NAME=atmel_sama5d3_xplained_mmc_dev_defconfig
    - DEFCONFIG_NAME=atmel_sama5d4ek_defconfig
    - DEFCONFIG_NAME=atmel_sama5d4_xplained_defconfig
+   - DEFCONFIG_NAME=atmel_sama5d4_xplained_dev_defconfig
    - DEFCONFIG_NAME=atmel_sama5d4_xplained_mmc_defconfig
+   - DEFCONFIG_NAME=atmel_sama5d4_xplained_mmc_dev_defconfig
    - DEFCONFIG_NAME=beaglebone_defconfig
    - DEFCONFIG_NAME=calao_qil_a9260_defconfig
    - DEFCONFIG_NAME=calao_tny_a9g20_lpw_defconfig
@@ -63,6 +68,7 @@ env:
    - DEFCONFIG_NAME=galileo_defconfig
    - DEFCONFIG_NAME=kb9202_defconfig
    - DEFCONFIG_NAME=lego_ev3_defconfig
+   - DEFCONFIG_NAME=linksprite_pcduino_defconfig
    - DEFCONFIG_NAME=mini2440_defconfig
    - DEFCONFIG_NAME=minnowboard_defconfig
    - DEFCONFIG_NAME=minnowboard_max_defconfig
@@ -136,7 +142,7 @@ script:
 - echo 'Clone Buildroot repository'
 - git clone git://git.busybox.net/buildroot
 - cd buildroot
-- git checkout de2fff217402eb8e6321610cf700f4b0393caa02
+- git checkout 3fb83a9e92cce92e820d1119574dc26ee4f1e8f8
 # Crude hack to account for the fact that XFS is used by Travis, and
 # consumes less blocks than ext2/3/4, and therefore defeats mke2img
 # calculation. Without this, the altera_*_defconfig fail to build.
