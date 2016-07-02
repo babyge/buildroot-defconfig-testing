@@ -97,10 +97,14 @@ env:
    - DEFCONFIG_NAME=qemu_m68k_q800_defconfig
    - DEFCONFIG_NAME=qemu_microblazebe_mmu_defconfig
    - DEFCONFIG_NAME=qemu_microblazeel_mmu_defconfig
+   - DEFCONFIG_NAME=qemu_mips32r2el_malta_defconfig
+   - DEFCONFIG_NAME=qemu_mips32r2_malta_defconfig
+   - DEFCONFIG_NAME=qemu_mips32r6el_malta_defconfig
+   - DEFCONFIG_NAME=qemu_mips32r6_malta_defconfig
    - DEFCONFIG_NAME=qemu_mips64el_malta_defconfig
    - DEFCONFIG_NAME=qemu_mips64_malta_defconfig
-   - DEFCONFIG_NAME=qemu_mipsel_malta_defconfig
-   - DEFCONFIG_NAME=qemu_mips_malta_defconfig
+   - DEFCONFIG_NAME=qemu_mips64r6el_malta_defconfig
+   - DEFCONFIG_NAME=qemu_mips64r6_malta_defconfig
    - DEFCONFIG_NAME=qemu_ppc64_pseries_defconfig
    - DEFCONFIG_NAME=qemu_ppc_g3beige_defconfig
    - DEFCONFIG_NAME=qemu_ppc_mpc8544ds_defconfig
@@ -143,7 +147,7 @@ script:
 - echo 'Clone Buildroot repository'
 - git clone git://git.busybox.net/buildroot
 - cd buildroot
-- git checkout beddc22a7dbb91fc782759067372f711227d054c
+- git checkout f7c9571cb0e00338b32cb1b17f185cfcc4ad4965
 # Crude hack to account for the fact that XFS is used by Travis, and
 # consumes less blocks than ext2/3/4, and therefore defeats mke2img
 # calculation. Without this, the altera_*_defconfig fail to build.
