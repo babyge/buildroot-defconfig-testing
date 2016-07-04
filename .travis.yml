@@ -47,6 +47,7 @@ env:
    - DEFCONFIG_NAME=calao_usb_a9260_defconfig
    - DEFCONFIG_NAME=calao_usb_a9263_defconfig
    - DEFCONFIG_NAME=calao_usb_a9g20_lpw_defconfig
+   - DEFCONFIG_NAME=chromebook_snow_defconfig
    - DEFCONFIG_NAME=ci20_defconfig
    - DEFCONFIG_NAME=cubieboard2_defconfig
    - DEFCONFIG_NAME=cubieboard_defconfig
@@ -147,7 +148,7 @@ script:
 - echo 'Clone Buildroot repository'
 - git clone git://git.busybox.net/buildroot
 - cd buildroot
-- git checkout f7c9571cb0e00338b32cb1b17f185cfcc4ad4965
+- git checkout 8f800b6610fb4f743b02df75a137991b5cac112a
 # Crude hack to account for the fact that XFS is used by Travis, and
 # consumes less blocks than ext2/3/4, and therefore defeats mke2img
 # calculation. Without this, the altera_*_defconfig fail to build.
