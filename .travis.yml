@@ -18,6 +18,7 @@ env:
    - DEFCONFIG_NAME=acmesystems_arietta_g25_256mb_defconfig
    - DEFCONFIG_NAME=altera_socdk_defconfig
    - DEFCONFIG_NAME=altera_sockit_defconfig
+   - DEFCONFIG_NAME=arcturus_ucp1020_defconfig
    - DEFCONFIG_NAME=armadeus_apf27_defconfig
    - DEFCONFIG_NAME=armadeus_apf28_defconfig
    - DEFCONFIG_NAME=armadeus_apf51_defconfig
@@ -67,6 +68,7 @@ env:
    - DEFCONFIG_NAME=freescale_p1010rdb_pa_defconfig
    - DEFCONFIG_NAME=freescale_p2020ds_defconfig
    - DEFCONFIG_NAME=galileo_defconfig
+   - DEFCONFIG_NAME=gdb_bfin_bf512_defconfig
    - DEFCONFIG_NAME=kb9202_defconfig
    - DEFCONFIG_NAME=lego_ev3_defconfig
    - DEFCONFIG_NAME=linksprite_pcduino_defconfig
@@ -149,7 +151,7 @@ script:
 - echo 'Clone Buildroot repository'
 - git clone git://git.busybox.net/buildroot
 - cd buildroot
-- git checkout 627dc235ffb12d8d0c1cbb95b46d891160d9e452
+- git checkout bd3c4d8c7f69cb5e741786ba9970fffe57c9f6cc
 # Crude hack to account for the fact that XFS is used by Travis, and
 # consumes less blocks than ext2/3/4, and therefore defeats mke2img
 # calculation. Without this, the altera_*_defconfig fail to build.
