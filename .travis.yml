@@ -134,7 +134,6 @@ env:
    - DEFCONFIG_NAME=snps_axs101_defconfig
    - DEFCONFIG_NAME=snps_axs103_defconfig
    - DEFCONFIG_NAME=snps_hs38_smp_vdk_defconfig
-   - DEFCONFIG_NAME=snps_hs38_vdk_defconfig
    - DEFCONFIG_NAME=stm32f429_disco_defconfig
    - DEFCONFIG_NAME=stm32f469_disco_defconfig
    - DEFCONFIG_NAME=telit_evk_pro3_defconfig
@@ -152,7 +151,7 @@ script:
 - echo 'Clone Buildroot repository'
 - git clone git://git.busybox.net/buildroot
 - cd buildroot
-- git checkout e8c18f2d19f59d313a56c6bb1c1826d70263b4b4
+- git checkout e0ac23b0ed65256537ce66ceec4d1f543633ddf7
 # Crude hack to account for the fact that XFS is used by Travis, and
 # consumes less blocks than ext2/3/4, and therefore defeats mke2img
 # calculation. Without this, the altera_*_defconfig fail to build.
