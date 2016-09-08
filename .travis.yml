@@ -143,6 +143,7 @@ env:
    - DEFCONFIG_NAME=udoo_quad_defconfig
    - DEFCONFIG_NAME=via_imx6_vab820_defconfig
    - DEFCONFIG_NAME=wandboard_defconfig
+   - DEFCONFIG_NAME=warp7_defconfig
    - DEFCONFIG_NAME=warpboard_defconfig
    - DEFCONFIG_NAME=zynq_microzed_defconfig
    - DEFCONFIG_NAME=zynq_zc706_defconfig
@@ -151,7 +152,7 @@ script:
 - echo 'Clone Buildroot repository'
 - git clone git://git.busybox.net/buildroot
 - cd buildroot
-- git checkout 6ddb8b720c45eedcc4759e029c6b8f2e4d9aaf4a
+- git checkout 054dde0eab6e5c0db2cdcd61612360093ee908da
 # Crude hack to account for the fact that XFS is used by Travis, and
 # consumes less blocks than ext2/3/4, and therefore defeats mke2img
 # calculation. Without this, the altera_*_defconfig fail to build.
