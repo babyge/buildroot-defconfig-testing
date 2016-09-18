@@ -140,6 +140,7 @@ env:
    - DEFCONFIG_NAME=telit_evk_pro3_defconfig
    - DEFCONFIG_NAME=toradex_apalis_imx6_defconfig
    - DEFCONFIG_NAME=ts4800_defconfig
+   - DEFCONFIG_NAME=ts4900_defconfig
    - DEFCONFIG_NAME=ts5x00_defconfig
    - DEFCONFIG_NAME=udoo_quad_defconfig
    - DEFCONFIG_NAME=via_imx6_vab820_defconfig
@@ -153,7 +154,7 @@ script:
 - echo 'Clone Buildroot repository'
 - git clone git://git.busybox.net/buildroot
 - cd buildroot
-- git checkout e9ffb3b8f71f44703d09059363dce7e3d3ff2e7e
+- git checkout 411cb66acdca6bf74db52e652788f61c6d978c01
 # Crude hack to account for the fact that XFS is used by Travis, and
 # consumes less blocks than ext2/3/4, and therefore defeats mke2img
 # calculation. Without this, the altera_*_defconfig fail to build.
