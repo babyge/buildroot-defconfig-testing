@@ -69,6 +69,7 @@ env:
    - DEFCONFIG_NAME=freescale_p2020ds_defconfig
    - DEFCONFIG_NAME=galileo_defconfig
    - DEFCONFIG_NAME=gdb_bfin_bf512_defconfig
+   - DEFCONFIG_NAME=grinn_liteboard_defconfig
    - DEFCONFIG_NAME=imx6ulpico_defconfig
    - DEFCONFIG_NAME=kb9202_defconfig
    - DEFCONFIG_NAME=lego_ev3_defconfig
@@ -154,7 +155,7 @@ script:
 - echo 'Clone Buildroot repository'
 - git clone git://git.busybox.net/buildroot
 - cd buildroot
-- git checkout 426a84c2fe347ff22ae5fab19b243738d20e0b2d
+- git checkout 66634ea8fc6e8e5e8c173958d64a9527e2351ded
 # Crude hack to account for the fact that XFS is used by Travis, and
 # consumes less blocks than ext2/3/4, and therefore defeats mke2img
 # calculation. Without this, the altera_*_defconfig fail to build.
