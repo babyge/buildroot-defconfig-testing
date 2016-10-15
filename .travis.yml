@@ -9,6 +9,9 @@ addons:
     - libstdc++6:i386
     - zlib1g:i386
     - gcc-multilib
+before_install:
+  - sudo dpkg --add-architecture i386
+  - sudo apt-get update
 notifications:
   irc: "chat.freenode.net#buildroot"
 env:
