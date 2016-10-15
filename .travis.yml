@@ -43,6 +43,7 @@ env:
    - DEFCONFIG_NAME=atmel_sama5d4_xplained_mmc_defconfig
    - DEFCONFIG_NAME=atmel_sama5d4_xplained_mmc_dev_defconfig
    - DEFCONFIG_NAME=beaglebone_defconfig
+   - DEFCONFIG_NAME=beaglebone_qt5_defconfig
    - DEFCONFIG_NAME=calao_qil_a9260_defconfig
    - DEFCONFIG_NAME=calao_tny_a9g20_lpw_defconfig
    - DEFCONFIG_NAME=calao_usb_a9260_defconfig
@@ -99,6 +100,7 @@ env:
    - DEFCONFIG_NAME=pc_x86_64_efi_defconfig
    - DEFCONFIG_NAME=qemu_aarch64_virt_defconfig
    - DEFCONFIG_NAME=qemu_arm_versatile_defconfig
+   - DEFCONFIG_NAME=qemu_arm_versatile_nommu_defconfig
    - DEFCONFIG_NAME=qemu_arm_vexpress_defconfig
    - DEFCONFIG_NAME=qemu_m68k_mcf5208_defconfig
    - DEFCONFIG_NAME=qemu_m68k_q800_defconfig
@@ -152,11 +154,12 @@ env:
    - DEFCONFIG_NAME=zynq_microzed_defconfig
    - DEFCONFIG_NAME=zynq_zc706_defconfig
    - DEFCONFIG_NAME=zynq_zed_defconfig
+   - DEFCONFIG_NAME=zynq_zybo_defconfig
 script:
 - echo 'Clone Buildroot repository'
 - git clone git://git.busybox.net/buildroot
 - cd buildroot
-- git checkout 8e327d4c69720fb215c547de788e65cb211a9978
+- git checkout b5f8c99aac7c4efe8b6a651a977aa05719a57709
 # Crude hack to account for the fact that XFS is used by Travis, and
 # consumes less blocks than ext2/3/4, and therefore defeats mke2img
 # calculation. Without this, the altera_*_defconfig fail to build.
