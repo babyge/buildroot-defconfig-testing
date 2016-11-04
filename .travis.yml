@@ -49,7 +49,6 @@ env:
    - DEFCONFIG_NAME=chromebook_snow_defconfig
    - DEFCONFIG_NAME=ci20_defconfig
    - DEFCONFIG_NAME=cubieboard2_defconfig
-   - DEFCONFIG_NAME=cubieboard_defconfig
    - DEFCONFIG_NAME=firefly_rk3288_defconfig
    - DEFCONFIG_NAME=firefly_rk3288_demo_defconfig
    - DEFCONFIG_NAME=freescale_imx28evk_defconfig
@@ -81,6 +80,7 @@ env:
    - DEFCONFIG_NAME=mx53loco_defconfig
    - DEFCONFIG_NAME=mx6cubox_defconfig
    - DEFCONFIG_NAME=mx6udoo_defconfig
+   - DEFCONFIG_NAME=nanopi_neo_defconfig
    - DEFCONFIG_NAME=nitrogen6sx_defconfig
    - DEFCONFIG_NAME=nitrogen6x_defconfig
    - DEFCONFIG_NAME=nitrogen7_defconfig
@@ -143,7 +143,6 @@ env:
    - DEFCONFIG_NAME=ts4800_defconfig
    - DEFCONFIG_NAME=ts4900_defconfig
    - DEFCONFIG_NAME=ts5x00_defconfig
-   - DEFCONFIG_NAME=udoo_quad_defconfig
    - DEFCONFIG_NAME=via_imx6_vab820_defconfig
    - DEFCONFIG_NAME=wandboard_defconfig
    - DEFCONFIG_NAME=warp7_defconfig
@@ -156,7 +155,7 @@ script:
 - echo 'Clone Buildroot repository'
 - git clone git://git.busybox.net/buildroot
 - cd buildroot
-- git checkout aed8107168f6c3bd8e4646e156a9507a7e800009
+- git checkout 07c1ae90c8890e82e62c22beaa4a72f6e081e96c
 # Crude hack to account for the fact that XFS is used by Travis, and
 # consumes less blocks than ext2/3/4, and therefore defeats mke2img
 # calculation. Without this, the altera_*_defconfig fail to build.
