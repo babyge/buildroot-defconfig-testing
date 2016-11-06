@@ -68,10 +68,8 @@ env:
    - DEFCONFIG_NAME=gdb_bfin_bf512_defconfig
    - DEFCONFIG_NAME=grinn_liteboard_defconfig
    - DEFCONFIG_NAME=imx6ulpico_defconfig
-   - DEFCONFIG_NAME=kb9202_defconfig
    - DEFCONFIG_NAME=lego_ev3_defconfig
    - DEFCONFIG_NAME=linksprite_pcduino_defconfig
-   - DEFCONFIG_NAME=mini2440_defconfig
    - DEFCONFIG_NAME=minnowboard_defconfig
    - DEFCONFIG_NAME=minnowboard_max_defconfig
    - DEFCONFIG_NAME=minnowboard_max-graphical_defconfig
@@ -155,7 +153,7 @@ script:
 - echo 'Clone Buildroot repository'
 - git clone git://git.busybox.net/buildroot
 - cd buildroot
-- git checkout 07c1ae90c8890e82e62c22beaa4a72f6e081e96c
+- git checkout fc1d28891f52c3ccce1a01ad5ad1a9db23300495
 # Crude hack to account for the fact that XFS is used by Travis, and
 # consumes less blocks than ext2/3/4, and therefore defeats mke2img
 # calculation. Without this, the altera_*_defconfig fail to build.
