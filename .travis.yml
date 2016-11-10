@@ -34,18 +34,12 @@ env:
    - DEFCONFIG_NAME=atmel_sama5d3_xplained_dev_defconfig
    - DEFCONFIG_NAME=atmel_sama5d3_xplained_mmc_defconfig
    - DEFCONFIG_NAME=atmel_sama5d3_xplained_mmc_dev_defconfig
-   - DEFCONFIG_NAME=atmel_sama5d4ek_defconfig
    - DEFCONFIG_NAME=atmel_sama5d4_xplained_defconfig
    - DEFCONFIG_NAME=atmel_sama5d4_xplained_dev_defconfig
    - DEFCONFIG_NAME=atmel_sama5d4_xplained_mmc_defconfig
    - DEFCONFIG_NAME=atmel_sama5d4_xplained_mmc_dev_defconfig
    - DEFCONFIG_NAME=beaglebone_defconfig
    - DEFCONFIG_NAME=beaglebone_qt5_defconfig
-   - DEFCONFIG_NAME=calao_qil_a9260_defconfig
-   - DEFCONFIG_NAME=calao_tny_a9g20_lpw_defconfig
-   - DEFCONFIG_NAME=calao_usb_a9260_defconfig
-   - DEFCONFIG_NAME=calao_usb_a9263_defconfig
-   - DEFCONFIG_NAME=calao_usb_a9g20_lpw_defconfig
    - DEFCONFIG_NAME=chromebook_snow_defconfig
    - DEFCONFIG_NAME=ci20_defconfig
    - DEFCONFIG_NAME=cubieboard2_defconfig
@@ -151,7 +145,7 @@ script:
 - echo 'Clone Buildroot repository'
 - git clone git://git.busybox.net/buildroot
 - cd buildroot
-- git checkout 64904f0f6d691cfea5ae1c8f58e2d61aac0684c2
+- git checkout 1a23203bf40ce3ade154cdc3f1b91191ca23fdd3
 # Crude hack to account for the fact that XFS is used by Travis, and
 # consumes less blocks than ext2/3/4, and therefore defeats mke2img
 # calculation. Without this, the altera_*_defconfig fail to build.
