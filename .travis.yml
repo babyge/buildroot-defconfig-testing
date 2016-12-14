@@ -71,6 +71,7 @@ env:
    - DEFCONFIG_NAME=mx51evk_defconfig
    - DEFCONFIG_NAME=mx53loco_defconfig
    - DEFCONFIG_NAME=mx6cubox_defconfig
+   - DEFCONFIG_NAME=mx6sx_udoo_neo_defconfig
    - DEFCONFIG_NAME=mx6udoo_defconfig
    - DEFCONFIG_NAME=nanopi_neo_defconfig
    - DEFCONFIG_NAME=nitrogen6sx_defconfig
@@ -146,7 +147,7 @@ script:
 - echo 'Clone Buildroot repository'
 - git clone git://git.busybox.net/buildroot
 - cd buildroot
-- git checkout f65e462da2b1100fb407b1409278bf42d6cc5ee3
+- git checkout 5b272e3e551e723bae78140f7de4029b9026d961
 # Crude hack to account for the fact that XFS is used by Travis, and
 # consumes less blocks than ext2/3/4, and therefore defeats mke2img
 # calculation. Without this, the altera_*_defconfig fail to build.
