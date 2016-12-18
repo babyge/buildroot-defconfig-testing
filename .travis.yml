@@ -38,6 +38,7 @@ env:
    - DEFCONFIG_NAME=atmel_sama5d4_xplained_dev_defconfig
    - DEFCONFIG_NAME=atmel_sama5d4_xplained_mmc_defconfig
    - DEFCONFIG_NAME=atmel_sama5d4_xplained_mmc_dev_defconfig
+   - DEFCONFIG_NAME=beagleboardx15_defconfig
    - DEFCONFIG_NAME=beaglebone_defconfig
    - DEFCONFIG_NAME=beaglebone_qt5_defconfig
    - DEFCONFIG_NAME=chromebook_snow_defconfig
@@ -148,7 +149,7 @@ script:
 - echo 'Clone Buildroot repository'
 - git clone git://git.busybox.net/buildroot
 - cd buildroot
-- git checkout 4f11de1a60064c91245411c06771141c90ca67c6
+- git checkout e1a0a8858e59c3ed73637521cc77e3937e9da2d4
 # Crude hack to account for the fact that XFS is used by Travis, and
 # consumes less blocks than ext2/3/4, and therefore defeats mke2img
 # calculation. Without this, the altera_*_defconfig fail to build.
