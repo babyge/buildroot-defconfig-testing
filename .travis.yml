@@ -63,6 +63,7 @@ env:
    - DEFCONFIG_NAME=grinn_chiliboard_defconfig
    - DEFCONFIG_NAME=grinn_liteboard_defconfig
    - DEFCONFIG_NAME=imx23evk_defconfig
+   - DEFCONFIG_NAME=imx6q-sabresd_defconfig
    - DEFCONFIG_NAME=imx6ulpico_defconfig
    - DEFCONFIG_NAME=lego_ev3_defconfig
    - DEFCONFIG_NAME=linksprite_pcduino_defconfig
@@ -153,7 +154,7 @@ script:
 - echo 'Clone Buildroot repository'
 - git clone git://git.busybox.net/buildroot
 - cd buildroot
-- git checkout 429388a86b8cb20a6c818357e6294ae3e24d3b82
+- git checkout e5f505efac725b7e12b22f1341ce0523df73a79f
 # Crude hack to account for the fact that XFS is used by Travis, and
 # consumes less blocks than ext2/3/4, and therefore defeats mke2img
 # calculation. Without this, the altera_*_defconfig fail to build.
