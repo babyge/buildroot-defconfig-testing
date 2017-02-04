@@ -131,10 +131,10 @@ env:
    - DEFCONFIG_NAME=s6lx9_microboard_defconfig
    - DEFCONFIG_NAME=sheevaplug_defconfig
    - DEFCONFIG_NAME=snps_aarch64_vdk_defconfig
+   - DEFCONFIG_NAME=snps_archs38_vdk_defconfig
    - DEFCONFIG_NAME=snps_archs38_zebu_defconfig
    - DEFCONFIG_NAME=snps_axs101_defconfig
    - DEFCONFIG_NAME=snps_axs103_defconfig
-   - DEFCONFIG_NAME=snps_hs38_smp_vdk_defconfig
    - DEFCONFIG_NAME=stm32f429_disco_defconfig
    - DEFCONFIG_NAME=stm32f469_disco_defconfig
    - DEFCONFIG_NAME=telit_evk_pro3_defconfig
@@ -154,7 +154,7 @@ script:
 - echo 'Clone Buildroot repository'
 - git clone git://git.busybox.net/buildroot
 - cd buildroot
-- git checkout ebd029c9d9eacb649d6d1826a061830477e31d39
+- git checkout bf1c9828f2c7ef37a0af4da5532472fb7e03ba67
 # Crude hack to account for the fact that XFS is used by Travis, and
 # consumes less blocks than ext2/3/4, and therefore defeats mke2img
 # calculation. Without this, the altera_*_defconfig fail to build.
